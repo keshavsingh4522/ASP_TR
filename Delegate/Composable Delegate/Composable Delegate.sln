@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Composable Delegate", "Composable Delegate.csproj", "{1AC0914A-2E0E-4737-8671-3498F702E1DA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1AC0914A-2E0E-4737-8671-3498F702E1DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1AC0914A-2E0E-4737-8671-3498F702E1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1AC0914A-2E0E-4737-8671-3498F702E1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1AC0914A-2E0E-4737-8671-3498F702E1DA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2981888B-FF22-4BC5-8D39-F938A135AD12}
+	EndGlobalSection
+EndGlobal
