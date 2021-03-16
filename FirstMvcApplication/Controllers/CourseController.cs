@@ -1,4 +1,5 @@
-﻿using FirstMvcApplication.Models;
+﻿using FirstMvcApplication.DataAccess;
+using FirstMvcApplication.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,6 +9,18 @@ namespace FirstMvcApplication.Controllers
 {
     public class CourseController : Controller
     {
+        private RouxAcademyDbContext db = new RouxAcademyDbContext();
+        public ActionResult Online()
+        {
+            /*var courses = db.Courses.Where(c => c.IsVirtual).OrderBy(c => c.Name).ToList();
+            return View(courses);*/
+
+            var courses = from c in db.Courses
+                          where c.IsVirtual
+                          orderby c.Name
+                          select c;
+            return View(courses.ToList());
+        }
         // GET: Course
         public ActionResult Index()
         {
@@ -17,7 +30,8 @@ namespace FirstMvcApplication.Controllers
         // GET: Course/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var courses = db.Courses.Where(c => c.Id == id).SingleOrDefault();
+            return View(courses);
         }
 
         // GET: Course/Create
@@ -34,7 +48,11 @@ namespace FirstMvcApplication.Controllers
             {
                 if (ModelState.IsValid)
                 {
-                    // TODO: Add insert logic here
+                    using(var context = new RouxAcademyDbContext())
+                    {
+                        context.Courses.Add(course);
+                        context.SaveChanges();
+                    }
 
                     return RedirectToAction("Index");
                 }
